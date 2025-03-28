@@ -11,7 +11,7 @@ const suite = new Benchmark.Suite();
 
 function addJSONTest(name, object) {
 	const str = pack(object);
-	const zipped = zlib.deflateSync(encoded.buffer);
+	const zipped = zlib.deflateSync(str);
 
 	suite
 		.add(`${name} MSGPK serialize`, () => {
