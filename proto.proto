@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+message SimpleObject {
+  int32 id = 1;
+  string name = 2;
+  bool active = 3;
+  int64 createdAt = 4; // дата представлена timestamp (unix milliseconds)
+}
+
+message MediumObject {
+  repeated User users = 1;
+
+  message User {
+    int32 userId = 1;
+    string username = 2;
+    int64 registeredAt = 3;
+  }
+}
+
+message Point {
+   double xValue = 1;
+   double yValue = 2;
+   double zValue = 3;
+}
+message LargeNumericObject {
+  repeated Point metrics = 1;
+}
+
+message RepetitiveStringObject {
+  repeated string messages = 1;
+}
+
+message DeepNestedObject {
+  map<string, NestedLevel> levels = 1;
+
+  message NestedLevel {
+    double index = 1;
+    map<string, NestedLevel> nested = 2;
+  }
+}
