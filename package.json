@@ -11,10 +11,14 @@
 	"type": "module",
 	"description": "",
 	"dependencies": {
+		"avsc": "^5.7.7",
 		"benchmark": "^2.1.4",
+		"devalue": "^5.1.1",
 		"encodexx": "^1.10.1",
+		"fast-xml-parser": "^5.0.9",
 		"msgpackr": "^1.11.2",
 		"protobufjs": "^7.4.0",
+		"xml": "^1.0.1",
 		"zlib": "^1.0.5"
 	}
 }

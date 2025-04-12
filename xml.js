@@ -4,21 +4,25 @@ import { mediumObject } from "./data/case2.js";
 import { largeNumericObject } from "./data/case3.js";
 import { repetitiveStringObject } from "./data/case4.js";
 import { case5Data } from "./data/case5.js";
+import { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser";
 import zlib from "zlib";
 
 const suite = new Benchmark.Suite();
 
 function addJSONTest(name, object) {
-	const jsonString = JSON.stringify(object);
+	const parser = new XMLParser();
+	const builder = new XMLBuilder();
+
+	const jsonString = builder.build(object);
 	const sizeInBytes = Buffer.byteLength(jsonString, "utf8");
 	const zipped = zlib.deflateSync(Buffer.from(jsonString));
 
 	suite
 		.add(`${name} JSON serialize`, () => {
-			JSON.stringify(object);
+			builder.build(object);
 		})
 		.add(`${name} JSON deserialize`, () => {
-			JSON.parse(jsonString);
+			parser.parse(jsonString);
 		});
 	console.log(
 		`${name} serialized size: ${sizeInBytes.toLocaleString()} bytes zipped - ${zipped.byteLength.toLocaleString()}`

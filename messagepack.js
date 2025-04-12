@@ -4,6 +4,7 @@ import { mediumObject } from "./data/case2.js";
 import { largeNumericObject } from "./data/case3.js";
 import { repetitiveStringObject } from "./data/case4.js";
 import { unpack, pack } from "msgpackr";
+import { case5Data } from "./data/case5.js";
 
 import zlib from "zlib";
 

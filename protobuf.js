@@ -5,6 +5,7 @@ import { simpleObject } from "./data/case1.js";
 import { mediumObject } from "./data/case2.js";
 import { largeNumericObject } from "./data/case3.js";
 import { repetitiveStringObject } from "./data/case4.js";
+import { case5Data } from "./data/case5.js";
 
 import zlib from "zlib";
 
@@ -19,6 +20,7 @@ const types = {
 	"Medium Object": root.lookupType("MediumObject"),
 	"Large Numeric Object": root.lookupType("LargeNumericObject"),
 	"Repetitive String Object": root.lookupType("RepetitiveStringObject"),
+	"Case 5": root.lookupType("Case5"),
 };
 
 // Функция для добавления тестов с Protobuf

@@ -38,3 +38,38 @@ message DeepNestedObject {
     map<string, NestedLevel> nested = 2;
   }
 }
+
+ message User2 {
+    int32 id = 1;
+    string name = 2;
+    string username = 3;
+    string email = 4;
+    Address address = 5;
+    string phone = 6;
+    string website = 7;
+    Company company = 8;
+
+    message Address {
+      string street = 1;
+      string suite = 2;
+      string city = 3;
+      string zipcode = 4;
+      Geo geo = 5;
+
+      message Geo {
+        double lat = 1;
+        double lng = 2;
+      }
+    }
+
+    message Company {
+      string name = 1;
+      string catchPhrase = 2;
+      string bs = 3;
+    }
+  }
+
+message Case5 {
+  repeated User2 users = 1;
+
+}
