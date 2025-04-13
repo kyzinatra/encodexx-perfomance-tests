@@ -26,11 +26,11 @@ function addJSONTest(name, object) {
 	);
 }
 
-// addJSONTest("Simple Object", simpleObject);
-// addJSONTest("Medium Object", mediumObject);
-// addJSONTest("Large Numeric Object", largeNumericObject);
-// addJSONTest("Repetitive String Object", repetitiveStringObject);
-addJSONTest("Case 5", case5Data);
+addJSONTest("Simple Object", simpleObject);
+addJSONTest("Medium Object", mediumObject);
+addJSONTest("Large Numeric Object", largeNumericObject);
+addJSONTest("Repetitive String Object", repetitiveStringObject);
+// addJSONTest("Case 5", case5Data);
 
 suite
 	.on("cycle", (event) => {
